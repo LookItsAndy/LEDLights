@@ -10,5 +10,13 @@
     "types": {
       "/FMSInfo": "FMSInfo"
     }
+  },
+  "NetworkTables": {
+    "LiveWindow": {
+      "open": true
+    },
+    "Preferences": {
+      "open": true
+    }
   }
 }

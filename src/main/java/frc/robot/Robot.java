@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.AddressableLEDBuffer;
 import edu.wpi.first.wpilibj.TimedRobot;
 
 
+
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
  * each mode, as described in the TimedRobot documentation. If you change the name of this class or
@@ -38,16 +39,20 @@ public class Robot extends TimedRobot {
   }
   @Override
   public void robotPeriodic() {
-    allRed();
-  }
-
-  public void allRed() {
-    for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-      m_ledBuffer.setRGB(i, 255, 0, 0);
-
-    }
+    setStaticColor();
     m_led.setData(m_ledBuffer);
   }
+
+  public void setStaticColor() {
+    for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+      //m_color = RobotPreferences.ColorPrefs.color.getValue();
+
+      m_ledBuffer.setRGB(i, RobotPreferences.ColorPrefs.redPref.getValue(), RobotPreferences.ColorPrefs.greenPref.getValue(), RobotPreferences.ColorPrefs.bluePref.getValue());
+
+    }
+  }
+
+  
 
   /** This function is run once each time the robot enters autonomous mode. */
   @Override
@@ -68,7 +73,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during teleoperated mode. */
   @Override
   public void teleopPeriodic() {
-    allRed();
+    
 
   }
 

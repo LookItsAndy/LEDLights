@@ -48,7 +48,7 @@ public class Robot extends TimedRobot {
     for (var i = 0; i < m_ledBuffer.getLength(); i++) {
       //m_color = RobotPreferences.ColorPrefs.color.getValue();
 
-      //m_ledBuffer.setRGB(i, RobotPreferences.ColorPrefs.redPref.getValue(), RobotPreferences.ColorPrefs.greenPref.getValue(), RobotPreferences.ColorPrefs.bluePref.getValue());
+      m_ledBuffer.setRGB(i, RobotPreferences.ColorPrefs.redPref.getValue(), RobotPreferences.ColorPrefs.greenPref.getValue(), RobotPreferences.ColorPrefs.bluePref.getValue());
 
     }
   }

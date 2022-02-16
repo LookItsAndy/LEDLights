@@ -14,15 +14,14 @@ public class RobotContainer {
     public static SN_DualActionStick controller = new SN_DualActionStick(0);
 
 
-    public static enableLEDs enableLight;
+    public static enableLEDs enableLight = new enableLEDs();
 
     public RobotContainer() {
 
-        enableLight = new enableLEDs();
-
+        configureButtonBindings();
     }
 
-    public static void configureButtonBinders() {
+    public static void configureButtonBindings() {
         controller.POV_North.whenPressed(enableLight);
     }
     
